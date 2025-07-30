@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "setup": "pnpm install && echo 'Setup completed! Make sure MongoDB is running, then run: pnpm dev'",
+    "docker:mongo": "docker run -d -p 27017:27017 --name bem-chatting-mongo mongo:latest",
+    "docker:stop": "docker stop bem-chatting-mongo",
+    "docker:start": "docker start bem-chatting-mongo",
+    "docker:remove": "docker rm bem-chatting-mongo",
+    "test:api": "echo 'Testing API endpoints...' && curl -X GET http://localhost:3000/api/users || echo 'Server not running or MongoDB not connected'"
+  }
+}
